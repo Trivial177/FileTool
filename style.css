@@ -1,0 +1,386 @@
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background-color: #f4f6f8;
+    color: #222;
+}
+header {
+    text-align: center;
+    padding: 25px 20px 10px;
+}
+
+header h1 {
+    margin: 0;
+    font-size: 48px;
+}
+
+header p {
+    margin-top: 10px;
+    color: #666;
+    font-size: 18px;
+}
+main {
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 10px 20px 30px;
+    text-align: center;
+}
+
+main h2 {
+    margin-bottom: 30px;
+}
+.tools {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+}
+.tools button {
+    padding: 25px;
+    font-size: 18px;
+    border-radius: 14px;
+    cursor: pointer;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+    background: white;
+    border: 1px solid #e5e7eb;
+}
+.tools button {
+    transition: 0.2s;
+}
+
+.tools button:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 10px 24px rgba(0, 0, 0, 0.12);
+    background: #fafafa;
+}
+.tools button:active {
+    transform: translateY(0);
+}
+@media (max-width: 600px) {
+    .tools{
+        grid-template-columns: 1fr;
+    }
+
+    header h1 {
+        font-size: 36px;
+    }
+}
+#converter,
+#compressor,
+#resizer,
+#removeBg,
+#replaceBg {
+    margin-top: 30px;
+    padding: 30px;
+    background: white;
+    border-radius: 16px;
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.08);
+}
+#converter input,
+#compressor input,
+#resizer input,
+#removeBg input,
+#replaceBg input,
+#converter select {
+    margin: 10px 5px;
+    padding: 12px;
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    font-size: 16px;
+}
+#converter button,
+#compressor button,
+#resizer button,
+#removeBg button,
+#replaceBg button {
+    padding: 12px 20px;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    font-size: 16px;
+}
+#converter button,
+#compressor button,
+#resizer button,
+#removeBg button,
+#replaceBg button {
+    background: #222;
+    color: white;
+    transition: 0.2s;
+}
+#converter button:hover,
+#compressor button:hover,
+#resizer button:hover,
+#removeBg button:hover,
+#replaceBg button:hover {
+    transform: translateY(-2px);
+    opacity: 0.85;
+}
+.tool-title {
+    display: block;
+    font-size: 20px;
+    font-weight: 600;
+}
+.tool-description {
+    display: block;
+    margin-top: 8px;
+    font-size: 14px;
+    font-weight: 400;
+    color: #777;
+}
+.tool-help {
+    color: #777;
+    font-size: 15px;
+    margin-bottom: 22px;
+}
+#converter h3 {
+    font-size: 18px;
+    margin-bottom: 8px;
+}
+#converter input[type="file"] {
+    padding: 12px;
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    background: #fafafa;
+    font-size: 15px;
+}
+#converter select {
+    padding: 12px 16px;
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    background: white;
+    font-size: 15px;
+    cursor: pointer;
+}
+#startConvert {
+    background: #111;
+    color: white;
+    font-weight: 600;
+    padding: 14px 24px;
+    border-radius: 12px;
+    box-shadow: 0 6px 16px rgba(0, 0, 0, 0.16);
+}
+#startConvert:hover {
+    background: #000;
+    transform: translateY(-3px);
+    box-shadow: 0 10px 22px rgba(0, 0, 0, 0.22);
+}
+#compressor label {
+    display: block;
+    margin-top: 15px;
+    margin-bottom: 8px;
+    font-weight: 600;
+}
+#quality {
+    width: 350px;
+    max-width: 100%;
+    cursor: pointer;
+}
+#startCompress {
+    background: #111;
+    color: white;
+    font-weight: 600;
+    padding: 14px 24px;
+    border-radius: 12px;
+}
+#startCompress:hover {
+    background: #000;
+    transform: translateY(-2px);
+}
+.size-inputs {
+    display: flex;
+    justify-content: center;
+    gap: 12px;
+    margin: 20px 0;
+}
+.size-inputs input {
+    width: 140px;
+    padding: 12px;
+    text-align: center;
+}
+#startResize {
+    background: #111;
+    color: white;
+    font-weight: 600;
+    padding: 14px 24px;
+    border-radius: 12px;
+}
+#startResize:hover {
+    background: #000;
+    transform: translateY(-2px);
+}
+#startRemoveBg {
+    background: #111;
+    color: white;
+    font-weight: 600;
+    padding: 14px 24px;
+    border-radius: 12px;
+}
+#startRemoveBg:hover {
+    background: #000;
+    transform: translateY(-2px);
+}
+#removeBgStatus {
+    margin-top: 18px;
+    font-size: 16px;
+    font-weight: 600;
+    min-height: 20px;
+}
+#removeBgStatus:not(:empty) {
+    padding: 10px;
+}
+#startReplaceBg {
+    background: #111;
+    color: white;
+    font-weight: 600;
+    padding: 14px 24px;
+    border-radius: 12px;
+}
+#startReplaceBg:hover {
+    background: #000;
+    transform: translateY(-2px);
+}
+#replaceBgStatus {
+    margin-top: 18px;
+    font-size: 16px;
+    font-weight: 600;
+    min-height: 20px;
+}
+#replaceBgStatus:not(:empty) {
+    padding: 10px;
+}
+.header-badge {
+    display: inline-block;
+    margin-top: 15px;
+    padding: 7px 14px;
+    background: white;
+    border: 1px solid #e5e7eb;
+    border-radius: 20px;
+    font-size: 14px;
+    font-weight: 600;
+    color: #555;
+}
+footer {
+    margin-top: 70px;
+    padding: 30px 20px;
+    text-align: center;
+    border-top: 1px solid #e5e7eb;
+}
+footer p {
+    margin: 6px 0;
+    color: #777;
+    font-size: 14px;
+}
+.logo-icon {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 42px;
+    height: 42px;
+}
+.logo-icon {
+    background: #111;
+    color: white;
+    border-radius: 12px;
+    font-size: 24px;
+    vertical-align: middle;
+}
+.theme-toggle {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    width: 48px;
+    height: 48px;
+}
+.theme-toggle {
+    border: 1px solid #e5e7eb;
+    border-radius: 50%;
+    background: white;
+    font-size: 21px;
+    cursor: pointer;
+}
+.dark-theme {
+    background: #111;
+    color: #f5f5f5;
+}
+.dark-theme header p,
+.dark-theme .tool-description,
+.dark-theme .tool-help,
+.dark-theme footer p {
+    color: #aaa;
+}
+.dark-theme .tools button {
+    background: #1c1c1c;
+    color: #f5f5f5;
+    border-color: #333;
+}
+.dark-theme #converter,
+.dark-theme #compressor,
+.dark-theme #resizer,
+.dark-theme #removeBg,
+.dark-theme #replaceBg {
+    background: #1c1c1c;
+    color: #f5f5f5;
+}
+.dark-theme .header-badge {
+    background: #1c1c1c;
+    color: #ccc;
+    border-color: #333;
+}
+.dark-theme .theme-toggle {
+    background: #1c1c1c;
+    border-color: #333;
+}
+.dark-theme .logo-icon {
+    background: white;
+    color: #111;
+}
+.dark-theme input,
+.dark-theme select {
+    background: #252525;
+    color: #f5f5f5;
+    border-color: #444;
+}
+.dark-theme input[type="file"]::file-selector-button {
+    background: #333;
+    color: white;
+    border: none;
+}
+.dark-theme #startConvert,
+.dark-theme #startCompress,
+.dark-theme #startResize,
+.dark-theme #startRemoveBg,
+.dark-theme #startReplaceBg {
+    background: white;
+    color: #111;
+}
+.dark-theme #startConvert:hover,
+.dark-theme #startCompress:hover,
+.dark-theme #startResize:hover,
+.dark-theme #startRemoveBg:hover,
+.dark-theme #startReplaceBg:hover {
+    background: #eaeaea;
+}
+.dark-theme #converter input[type="file"] {
+    background: #252525;
+    color: #f5f5f5;
+    border-color: #444;
+}
+.dark-theme #converter select {
+    background: #252525;
+    color: #f5f5f5;
+    border-color: #444;
+}
+.drop-zone {
+    padding: 30px;
+    margin-bottom: 15px;
+    border: 2px dashed #aaa;
+}
+.drop-zone {
+    border-radius: 14px;
+    color: #777;
+    cursor: pointer;
+}
+.drop-zone.dragging {
+    border-color: #fff;
+    background: #252525;
+}

@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FileTool — работа с изображениями</title>
+    <meta name="description"
+          content="Бесплатные инструменты для конвертации, сжатия, изменения размера и удаления фона изображений.">
+    <meta name="theme-color" content="#111111">     
+    <link rel="stylesheet" href="style.css">
+    <link rel="icon"
+          href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' rx='22' fill='%23111'/><text x='50' y='64' text-anchor='middle' font-size='48' font-family='Arial' font-weight='bold' fill='white'>FT</text></svg>">
+</head>
+
+<body>
+    <button id="themeToggle" class="theme-toggle">
+    🌙
+</button>
+<header>
+    <h1><span class="logo-icon">FT</span> FileTool</h1>
+    <p>Простые инструменты для работы с изображениями</p>
+    <p class="header-badge">Бесплатно • Без регистрации</p>
+</header>
+
+<main>
+    <h2>Что вы хотите сделать?</h2>
+
+    <div class="tools">
+        <button id="convertButton">
+    <span class="tool-title">Конвертировать</span>
+    <span class="tool-description">JPG, PNG и WEBP</span>
+</button>
+        <button id="compressButton">
+    <span class="tool-title">Сжать изображение</span>
+    <span class="tool-description">Уменьшить размер файла</span>
+</button>
+
+<button id="resizeButton">
+    <span class="tool-title">Изменить размер</span>
+    <span class="tool-description">Ширина и высота изображения</span>
+</button>
+        <button id="removeBgButton">
+    <span class="tool-title">Удалить фон</span>
+    <span class="tool-description">Автоматическое удаление фона</span>
+</button>
+        <button id="replaceBgButton">
+    <span class="tool-title">Заменить фон</span>
+    <span class="tool-description">Установить новый фон</span>
+</button>
+    </div>
+    <div id="converter" style="display: none;">
+    <h3>Конвертация изображения</h3>
+    <p class="tool-help">Выберите изображение и формат, в который хотите его преобразовать.</p>
+    <div class="drop-zone" id="convertDropZone">
+    Перетащите изображение сюда
+</div>
+    <input type="file" id="imageInput" accept="image/*">
+<select id="formatSelect">
+    <option value="image/jpeg">JPG</option>
+    <option value="image/png">PNG</option>
+    <option value="image/webp">WEBP</option>
+</select>
+<button id="startConvert">Конвертировать файл</button>
+</div>
+<div id="compressor" style="display: none;">
+    <h3>Сжатие изображения</h3>
+    <p class="tool-help">Выберите изображение и укажите качество сжатия.</p>
+    <div class="drop-zone" id="compressDropZone">
+    Перетащите изображение сюда
+</div>
+    <input type="file" id="compressInput" accept="image/*">
+    <label>Качество:</label>
+<input type="range" id="quality" min="0.1" max="1" step="0.1" value="0.7">
+
+<button id="startCompress">Сжать файл</button>
+</div>
+<div id="resizer" style="display: none;">
+    <h3>Изменение размера изображения</h3>
+    <p class="tool-help">Выберите изображение и укажите новый размер.</p>
+    <div class="drop-zone" id="resizeDropZone">
+    Перетащите изображение сюда
+</div>
+    <input type="file" id="resizeInput" accept="image/*">
+    <div class="size-inputs">
+    <input type="number" id="newWidth" placeholder="Ширина">
+    <input type="number" id="newHeight" placeholder="Высота">
+    </div>
+    <button id="startResize">Изменить размер</button>
+</div>
+    <div id="removeBg" style="display: none;">
+    <h3>Удаление фона</h3>
+    <p class="tool-help">Выберите изображение, и фон будет удалён автоматически.</p>
+    <div class="drop-zone" id="removeBgDropZone">
+    Перетащите изображение сюда
+</div>
+    <input type="file" id="removeBgInput" accept="image/*">
+    <button id="startRemoveBg">Удалить фон</button>
+    <p id="removeBgStatus"></p>
+</div>
+<div id="replaceBg" style="display: none;">
+    <h3>Замена фона</h3>
+    <p class="tool-help">Выберите основное изображение и картинку для нового фона.</p>
+    <p>Основное изображение:</p>
+     <div class="drop-zone" id="replaceMainDropZone">
+    Перетащите основное изображение сюда
+</div>
+    <input type="file" id="replaceMainInput" accept="image/*">
+    <p>Новый фон:</p>
+<div class="drop-zone" id="replaceBackgroundDropZone">
+    Перетащите новый фон сюда
+</div>
+<input type="file" id="replaceBackgroundInput" accept="image/*">
+<button id="startReplaceBg">Заменить фон</button>
+<p id="replaceBgStatus"></p>
+</div>
+</main>
+
+<footer>
+    <p>FileTool © 2026</p>
+    <p>Обработка изображений прямо в браузере</p>
+</footer>
+<script src="script.js"></script>
+</body>
+</html>
