@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://trivial177.github.io/FileTool/sitemap.xml
