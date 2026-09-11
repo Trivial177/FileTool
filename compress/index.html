@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Сжать фото онлайн бесплатно — FileTool</title>
+
+    <meta name="description"
+          content="Сжимайте JPG, PNG и WEBP изображения онлайн бесплатно прямо в браузере без регистрации.">
+
+    <link rel="canonical"
+          href="https://trivial177.github.io/FileTool/compress/">
+
+    <link rel="stylesheet" href="../style.css">
+
+    <meta name="theme-color" content="#111111">
+
+    <!-- Значок FT во вкладке браузера -->
+    <link rel="icon"
+          href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' rx='22' fill='%23111'/><text x='50' y='64' text-anchor='middle' font-size='48' font-family='Arial' font-weight='bold' fill='white'>FT</text></svg>">
+</head>
+
+<body>
+
+    <button id="themeToggle" class="theme-toggle">
+        🌙
+    </button>
+
+    <header>
+        <h1>
+            <span class="logo-icon">FT</span>
+            FileTool
+        </h1>
+
+        <p>Сжать фото онлайн бесплатно</p>
+
+        <p class="header-badge">
+            Бесплатно • Без регистрации
+        </p>
+    </header>
+
+    <main>
+
+        <h2>Сжатие изображения</h2>
+
+        <div id="compressor">
+
+            <p class="tool-help">
+                Загрузите изображение и выберите качество сжатия.
+            </p>
+
+            <div class="drop-zone" id="compressDropZone">
+                Перетащите изображение сюда
+            </div>
+
+            <input
+                type="file"
+                id="compressInput"
+                accept="image/*"
+            >
+
+            <label for="quality">
+                Качество:
+            </label>
+
+            <input
+                type="range"
+                id="quality"
+                min="0.1"
+                max="1"
+                step="0.1"
+                value="0.7"
+            >
+
+            <button id="startCompress">
+                Сжать файл
+            </button>
+
+        </div>
+
+        <section class="seo-section">
+
+            <h2>Сжать изображение онлайн бесплатно</h2>
+
+            <p>
+                FileTool позволяет бесплатно сжимать изображения
+                JPG, PNG и WEBP прямо в браузере без регистрации.
+            </p>
+
+            <p>
+                Уменьшите размер фотографии онлайн без установки
+                дополнительных программ.
+            </p>
+
+            <p>
+                <a href="../index.html">
+                    ← Вернуться на главную FileTool
+                </a>
+            </p>
+
+        </section>
+
+    </main>
+
+    <footer>
+        <p>FileTool © 2026</p>
+        <p>Обработка изображений прямо в браузере</p>
+    </footer>
+
+    <script src="compress.js"></script>
+
+</body>
+</html>

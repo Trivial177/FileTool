@@ -2,153 +2,180 @@
 <html lang="ru">
 
 <head>
-    <meta name="google-site-verification" content="aqA7dvrbC1IwWzhmt-K05icpSTYcF2aJKbag4tgwcCM" />
+
+    <meta name="google-site-verification"
+          content="aqA7dvrbC1IwWzhmt-K05icpSTYcF2aJKbag4tgwcCM">
+
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>FileTool — работа с изображениями</title>
+
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+
+    <title>FileTool — сжать фото, удалить фон и изменить размер онлайн</title>
+
     <meta name="description"
-          content="Бесплатные инструменты для конвертации, сжатия, изменения размера и удаления фона изображений.">
-    <link rel="canonical" href="https://trivial177.github.io/FileTool/">
+          content="Бесплатно сжимайте изображения, удаляйте и заменяйте фон, меняйте размер и конвертируйте JPG, PNG и WEBP онлайн без регистрации.">
+
+    <link rel="canonical"
+          href="https://trivial177.github.io/FileTool/">
+
     <meta property="og:title"
-      content="FileTool — бесплатные инструменты для изображений">
+          content="FileTool — бесплатные инструменты для изображений">
 
-<meta property="og:description"
-      content="Конвертация, сжатие, изменение размера и удаление фона изображений прямо в браузере.">
-      <meta property="og:type" content="website">
+    <meta property="og:description"
+          content="Конвертация, сжатие, изменение размера и удаление фона изображений прямо в браузере.">
 
-<meta property="og:url"
-      content="https://trivial177.github.io/FileTool/">
-      <meta property="og:image"
-      content="https://trivial177.github.io/FileTool/preview.png">
-      <meta property="og:image:width" content="1200">
-<meta property="og:image:height" content="630">
-          <meta name="theme-color" content="#111111">     
-    <link rel="stylesheet" href="style.css">
+    <meta property="og:type"
+          content="website">
+
+    <meta property="og:url"
+          content="https://trivial177.github.io/FileTool/">
+
+    <meta property="og:image"
+          content="https://trivial177.github.io/FileTool/preview.png">
+
+    <meta property="og:image:width"
+          content="1200">
+
+    <meta property="og:image:height"
+          content="630">
+
+    <meta name="theme-color"
+          content="#111111">
+
+    <link rel="stylesheet"
+          href="style.css">
+
     <link rel="icon"
-          href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' rx='22' fill='%23111'/><text x='50' y='64' text-anchor='middle' font-size='48' font-family='Arial' font-weight='bold' fill='white'>FT</text></svg>">
+          href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' rx='22' fill='%23111'/%3E%3Ctext x='50' y='64' text-anchor='middle' font-size='48' font-family='Arial' font-weight='bold' fill='white'%3EFT%3C/text%3E%3C/svg%3E">
+
 </head>
 
 <body>
+
     <button id="themeToggle" class="theme-toggle">
-    🌙
-</button>
-<header>
-    <h1><span class="logo-icon">FT</span> FileTool</h1>
-    <p>Простые инструменты для работы с изображениями</p>
-    <p class="header-badge">Бесплатно • Без регистрации</p>
-</header>
+        🌙
+    </button>
 
-<main>
-    <h2>Что вы хотите сделать?</h2>
+    <header>
 
-    <div class="tools">
-        <button id="convertButton">
-    <span class="tool-title">Конвертировать</span>
-    <span class="tool-description">JPG, PNG и WEBP</span>
-</button>
-        <button id="compressButton">
-    <span class="tool-title">Сжать изображение</span>
-    <span class="tool-description">Уменьшить размер файла</span>
-</button>
+        <h1>
+            <span class="logo-icon">FT</span>
+            FileTool
+        </h1>
 
-<button id="resizeButton">
-    <span class="tool-title">Изменить размер</span>
-    <span class="tool-description">Ширина и высота изображения</span>
-</button>
-        <button id="removeBgButton">
-    <span class="tool-title">Удалить фон</span>
-    <span class="tool-description">Автоматическое удаление фона</span>
-</button>
-        <button id="replaceBgButton">
-    <span class="tool-title">Заменить фон</span>
-    <span class="tool-description">Установить новый фон</span>
-</button>
-    </div>
-    <div id="converter" style="display: none;">
-    <h3>Конвертация изображения</h3>
-    <p class="tool-help">Выберите изображение и формат, в который хотите его преобразовать.</p>
-    <div class="drop-zone" id="convertDropZone">
-    Перетащите изображение сюда
-</div>
-    <input type="file" id="imageInput" accept="image/*">
-<select id="formatSelect">
-    <option value="image/jpeg">JPG</option>
-    <option value="image/png">PNG</option>
-    <option value="image/webp">WEBP</option>
-</select>
-<button id="startConvert">Конвертировать файл</button>
-</div>
-<div id="compressor" style="display: none;">
-    <h3>Сжатие изображения</h3>
-    <p class="tool-help">Выберите изображение и укажите качество сжатия.</p>
-    <div class="drop-zone" id="compressDropZone">
-    Перетащите изображение сюда
-</div>
-    <input type="file" id="compressInput" accept="image/*">
-    <label>Качество:</label>
-<input type="range" id="quality" min="0.1" max="1" step="0.1" value="0.7">
+        <p>
+            Сжатие, конвертация, изменение размера и удаление фона изображений онлайн
+        </p>
 
-<button id="startCompress">Сжать файл</button>
-</div>
-<div id="resizer" style="display: none;">
-    <h3>Изменение размера изображения</h3>
-    <p class="tool-help">Выберите изображение и укажите новый размер.</p>
-    <div class="drop-zone" id="resizeDropZone">
-    Перетащите изображение сюда
-</div>
-    <input type="file" id="resizeInput" accept="image/*">
-    <div class="size-inputs">
-    <input type="number" id="newWidth" placeholder="Ширина">
-    <input type="number" id="newHeight" placeholder="Высота">
-    </div>
-    <button id="startResize">Изменить размер</button>
-</div>
-    <div id="removeBg" style="display: none;">
-    <h3>Удаление фона</h3>
-    <p class="tool-help">Выберите изображение, и фон будет удалён автоматически.</p>
-    <div class="drop-zone" id="removeBgDropZone">
-    Перетащите изображение сюда
-</div>
-    <input type="file" id="removeBgInput" accept="image/*">
-    <button id="startRemoveBg">Удалить фон</button>
-    <p id="removeBgStatus"></p>
-</div>
-<div id="replaceBg" style="display: none;">
-    <h3>Замена фона</h3>
-    <p class="tool-help">Выберите основное изображение и картинку для нового фона.</p>
-    <p>Основное изображение:</p>
-     <div class="drop-zone" id="replaceMainDropZone">
-    Перетащите основное изображение сюда
-</div>
-    <input type="file" id="replaceMainInput" accept="image/*">
-    <p>Новый фон:</p>
-<div class="drop-zone" id="replaceBackgroundDropZone">
-    Перетащите новый фон сюда
-</div>
-<input type="file" id="replaceBackgroundInput" accept="image/*">
-<button id="startReplaceBg">Заменить фон</button>
-<p id="replaceBgStatus"></p>
-</div>
-</main>
+        <p class="header-badge">
+            Бесплатно • Без регистрации
+        </p>
 
-<footer>
-    <p>FileTool © 2026</p>
-    <p>Обработка изображений прямо в браузере</p>    
+    </header>
 
-<section class="seo-section">
-    <h2>Бесплатные инструменты для работы с изображениями</h2>
+    <main>
 
-    <p>
-        FileTool позволяет бесплатно конвертировать, сжимать
-        и изменять размер изображений прямо в браузере.
-    </p>
+        <h2>Что вы хотите сделать?</h2>
 
-    <p>
-        Также вы можете удалить фон с фотографии или заменить
-        его на другое изображение без установки программ.
-    </p>
-</section>
-</footer>
-<script src="script.js"></script>
+        <div class="tools">
+
+            <button
+                onclick="window.location.href='convert/index.html'"
+            >
+                <span class="tool-title">
+                    Конвертировать
+                </span>
+
+                <span class="tool-description">
+                    Конвертировать JPG, PNG и WEBP онлайн
+                </span>
+            </button>
+
+            <button
+                onclick="window.location.href='compress/index.html'"
+            >
+                <span class="tool-title">
+                    Сжать изображение
+                </span>
+
+                <span class="tool-description">
+                    Сжать фото онлайн бесплатно
+                </span>
+            </button>
+
+            <button
+                onclick="window.location.href='resize/index.html'"
+            >
+                <span class="tool-title">
+                    Изменить размер
+                </span>
+
+                <span class="tool-description">
+                    Изменить размер фото онлайн бесплатно
+                </span>
+            </button>
+
+            <button
+                onclick="window.location.href='remove-background/index.html'"
+            >
+                <span class="tool-title">
+                    Удалить фон
+                </span>
+
+                <span class="tool-description">
+                    Удалить фон с фото онлайн бесплатно
+                </span>
+            </button>
+
+            <button
+                onclick="window.location.href='replace-background/index.html'"
+            >
+                <span class="tool-title">
+                    Заменить фон
+                </span>
+
+                <span class="tool-description">
+                    Заменить фон на фото онлайн бесплатно
+                </span>
+            </button>
+
+        </div>
+
+    </main>
+
+    <footer>
+
+        <p>
+            FileTool © 2026
+        </p>
+
+        <p>
+            Обработка изображений прямо в браузере
+        </p>
+
+        <section class="seo-section">
+
+            <h2>
+                Бесплатные инструменты для работы с изображениями
+            </h2>
+
+            <p>
+                FileTool позволяет бесплатно сжать изображение онлайн,
+                изменить размер фото и конвертировать изображения
+                в JPG, PNG и WEBP прямо в браузере.
+            </p>
+
+            <p>
+                Также вы можете удалить фон с фото онлайн или заменить
+                фон на другое изображение бесплатно и без установки программ.
+            </p>
+
+        </section>
+
+    </footer>
+
+    <script src="script.js"></script>
+
 </body>
 </html>

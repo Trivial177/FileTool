@@ -1,6 +1,29 @@
 <?xml version="1.0" encoding="UTF-8"?>
+
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
-  <url>
-    <loc>https://trivial177.github.io/FileTool/</loc>
-  </url>
+
+    <url>
+        <loc>https://trivial177.github.io/FileTool/</loc>
+    </url>
+
+    <url>
+        <loc>https://trivial177.github.io/FileTool/convert/</loc>
+    </url>
+
+    <url>
+        <loc>https://trivial177.github.io/FileTool/compress/</loc>
+    </url>
+
+    <url>
+        <loc>https://trivial177.github.io/FileTool/resize/</loc>
+    </url>
+
+    <url>
+        <loc>https://trivial177.github.io/FileTool/remove-background/</loc>
+    </url>
+
+    <url>
+        <loc>https://trivial177.github.io/FileTool/replace-background/</loc>
+    </url>
+
 </urlset>
